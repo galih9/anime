@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import Animated from './pages/home'
 import './App.css';
+const divStyle = {
+  color: 'blue',
+  width: '200px',
+  height: '200px',
+  margin: '200px'
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={divStyle}>
+      <Animated />
     </div>
   );
 }
