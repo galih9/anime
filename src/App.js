@@ -1,11 +1,11 @@
 import React from 'react';
-import Animated from './pages/home'
+import Animated from './pages/home/home'
 import './App.css';
 const divStyle = {
-  color: 'blue',
-  width: '200px',
-  height: '200px',
-  margin: '200px'
+  width: '96%',
+  height: '100%',
+  margin: '20px',
+  padding: '10px'
 };
 
 function App() {
