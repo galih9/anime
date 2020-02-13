@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import anime from 'animejs'
 
+const styles = {
+    loader: {
+        backgroundColor: '#fff',
+        height: '20px',
+        width: '20px'
+    }
+}
+
 class Animated extends Component {
     componentDidMount() {
         var filesScanned = { count: 0, infected: 0 };
         var scanning = anime({
             targets: filesScanned,
             autoplay: false,
-            count: 1000,
-            infected: 8,
+            count: 50,
+            infected: '100%',
             easing: 'linear',
             round: 1,
             update: function () {
@@ -19,6 +27,12 @@ class Animated extends Component {
                 infected.innerHTML = filesScanned.infected;
             }
         });
+        var bar = anime({
+            targets: '.load',
+            width: '100%',
+            easing: 'easeInOutQuad',
+            direction: 'alternate'
+        })
 
         document.querySelector('.play-scan').onclick = scanning.restart;
     }
@@ -32,7 +46,8 @@ class Animated extends Component {
                 </div>
 
                 <div class="controls">
-                    <button class="play-scan">Replay Scanning</button></div>
+                    <button class="play-scan">Replay Scanning</button>
+                </div>
             </main>
         )
     }
